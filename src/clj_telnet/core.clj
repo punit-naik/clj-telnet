@@ -9,7 +9,7 @@
          on-receive #(println (str "Received message from the server: \"" % "\""))
          on-connect #(println "Connected to server:" (-> % .getRequestURI .toString))
          on-close (fn [code reason] (println (str "Closed connection to the server with code " code " => " reason)))
-         on-error #(println "Error occured" (ex-message %))}}]
+         on-error #(println "Error occured:" (ex-message %))}}]
   (ws/connect url
    :on-receive on-receive
    :on-close on-close
@@ -23,9 +23,3 @@
 (defn destroy
   [socket]
   (ws/close socket))
-
-(comment
-  (def s (init nil))
-  (destroy s)
-  s
-  (send-message s "test message"))
