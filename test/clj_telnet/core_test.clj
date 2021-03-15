@@ -28,3 +28,15 @@
       (Thread/sleep 1000)
       (is (= @x message))
       (core/destroy s))))
+
+(deftest user-prompt-test
+  (testing "User prompt fn"
+    (let [message "test message"
+          x (atom nil)
+          on-receive (fn [m] (reset! x m))
+          s (core/init {:on-receive on-receive})]
+      (with-in-str message
+        (core/user-prompt s))
+      (Thread/sleep 1000)
+      (is (= @x message))
+      (core/destroy s))))
