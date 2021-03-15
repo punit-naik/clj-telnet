@@ -6,9 +6,9 @@
   :dependencies [[org.clojure/clojure "1.10.1"]
                  [stylefruits/gniazdo "1.2.0"]]
   :profiles
-  {:uberjar {:main allstreet.editor.server.core
-             :aot :all}
-   :dev {:plugins [[lein-kibit "0.1.8"]
+  {:dev {:plugins [[lein-kibit "0.1.8"]
                    [lein-cloverage "1.2.2"]
                    [lein-codox "0.10.7"]]}}
-  :repl-options {:init-ns clj-telnet.core})
+  :repl-options {:init-ns clj-telnet.core}
+  :main clj-telnet.core
+  :aot :all)
