@@ -38,6 +38,5 @@
       (when-not (nil? s)
         (user-prompt s)
         (recur s)))
-    (-> (Runtime/getRuntime)
-        (.addShutdownHook
-         (Thread. (fn [] (destroy socket)))))))
+    (.addShutdownHook (Runtime/getRuntime)
+                      (Thread. (fn [] (destroy socket))))))
