@@ -1,10 +1,28 @@
 # clj-telnet
 
-A Clojure library designed to ... well, that part is up to you.
+A Clojure library designed to test a WS socket connection
 
 ## Usage
 
-FIXME
+**NOTE**: Requires [JDK](https://openjdk.java.net/) and [leiningen](https://leiningen.org/) to be installed!
+
+### Build
+```
+lein do clean, install
+```
+### Test
+```
+lein test
+```
+### Run
+```
+lein trampoline run
+```
+
+## Docs
+[API](https://punit-naik.github.io/clj-telnet)
+
+[Code Coverage](https://punit-naik.github.io/clj-telnet/coverage)
 
 ## License
 
